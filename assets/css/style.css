@@ -1,0 +1,55 @@
+*{
+    font-family: 'Dosis', sans-serif;
+    font-size: 1.5rem;
+    background-color: white;
+}
+
+header{
+    margin-top: 0;
+}
+
+h1 {
+    font-family: 'Comfortaa', cursive;
+    font-size: 2.5rem;
+    color: white;
+    text-align: center;
+    align-content: center;
+
+    width: 100%;
+    padding: 30pt;
+    background-color: rgba(14, 10, 125, 0.97);
+}
+
+main{
+    display: flex;
+    color: black;
+    flex-wrap: wrap;
+}
+
+.card {
+    margin: auto;
+    margin-top: 40pt;
+    border-style: solid;
+    border-color: black;
+    border-radius: 20pt;
+}
+
+h3 {
+    color: red;
+    font-size: 1.4rem;
+    margin-left: 20pt;
+}
+
+h5 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+
+    background-color: lightgrey;
+    padding: 20pt;
+    border-radius: 10pt;
+}
+
+p {
+    font-size: 1.25rem;
+}
