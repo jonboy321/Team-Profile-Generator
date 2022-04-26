@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-const generateHTML = ({ name, id, position, email, github }) =>
+const generateHTML = ({ name, id, position, email, github}) =>
   `<!DOCTYPE html>
   <html lang="en">
   <head>
@@ -81,12 +81,12 @@ inquirer
     {
       type: 'input',
       name: 'position',
-      message: 'Where are you from?',
+      message: 'Enter position',
     },
     {
       type: 'input',
       name: 'id',
-      message: 'What is your favorite hobby?',
+      message: 'Enter employee id',
     },
     {
       type: 'input',
@@ -96,7 +96,7 @@ inquirer
     {
       type: 'input',
       name: 'github',
-      message: 'Enter your GitHub Username',
+      message: 'Enter GitHub Username',
     },
   ])
   .then((answers) => {
