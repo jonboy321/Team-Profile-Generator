@@ -1,6 +1,14 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const { Manager, Intern, Engineer } = require('./lib');
+const path = require('path');
 
+const DIST_DIRECTORY = path.resolve(__dirname, "dist");
+const distPath = path.join(DIST_DIRECTORY, "index.html");
+
+const render = require('./src/page-template');
+
+const idArray = [];
 const employees = [];
 
 const createManager = () => {
