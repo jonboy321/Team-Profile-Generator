@@ -1,3 +1,77 @@
+const managerCard = function(Manager) {
+    return
+`<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">Manager</h5>
+            <p class="card-text">Name: ${Manager.name}</p>
+            <p class="card-text">ID: ${Manager.id}</p>
+            <p class="card-text">Email: <a href="https:${Manager.email}//"></a>${Manager.email}</p>
+            <p class="card-text">Office Number: ${Manager.officeNumber}</p>
+    </div>
+</div>`
+};
+
+const engineerCard = function(Engineer) {
+    return
+`<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">Engineer</h5>
+            <p class="card-text">Name: ${Engineer.name}</p>
+            <p class="card-text">ID: ${Engineer.id}</p>
+            <p class="card-text">Email: <a href="https://${Engineer.email}"></a>${Engineer.email}</p>
+            <p class="card-text">GitHub: <a href="https://github.com/${Engineer.github}"></a>${Engineer.github}</p>
+    </div>`
+};
+
+const internCard = function(Intern) {
+    return
+`</div>
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">Intern</h5>
+            <p class="card-text">Name: ${Intern.name}</p>
+            <p class="card-text">ID: ${Intern.id}</p>
+            <p class="card-text">Email: <a href="https://${Intern.email}"></a>${Intern.email}</p>
+            <p class="card-text">School: ${Intern.school}</p>
+    </div>
+</div>`
+};
+
+htmlPageContent = (data) => {
+
+    cardArray = []; 
+
+        for (let i = 0; i < data.length; i++) {
+            const employee = data[i];
+            const role = employee.getRole(); 
+
+            if (role === 'Manager') {
+                const mCard = managerCard(employee);
+
+                cardArray.push(mCard);
+            }
+
+            if (role === 'Engineer') {
+                const eCard = engineerCard(employee);
+
+                cardArray.push(eCard);
+            }
+
+            if (role === 'Intern') {
+                const iCard = internCard(employee);
+
+                cardArray.push(iCard);
+            }
+        }
+
+    const teamCards = cardArray.join('');
+
+    const generateTemplate = teamTemplate(teamCards);
+        return generateTemplate;
+};
+
+const teamTemplate = function (teamCards) {
+    return 
 `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,35 +95,10 @@
     </div>
     <div>
         <main>
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title">Manager</h5>
-                  <p class="card-text">Name: ${Manager.name}</p>
-                  <p class="card-text">ID: ${Manager.id}</p>
-                  <p class="card-text">Email: <a href="https:${Manager.email}//"></a>${Manager.email}</p>
-                  <p class="card-text">Office Number: ${Manager.officeNumber}</p>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title">Engineer</h5>
-                  <p class="card-text">Name: ${Engineer.name}</p>
-                  <p class="card-text">ID: ${Engineer.id}</p>
-                  <p class="card-text">Email: <a href="https://${Engineer.email}"></a>${Engineer.email}</p>
-                  <p class="card-text">GitHub: <a href="https://github.com/${Engineer.github}"></a>${Engineer.github}</p>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title">Intern</h5>
-                  <p class="card-text">Name: ${Intern.name}</p>
-                  <p class="card-text">ID: ${Intern.id}</p>
-                  <p class="card-text">Email: <a href="https://${Intern.email}"></a>${Intern.email}</p>
-                  <p class="card-text">School: ${Intern.school}</p>
-                </div>
-            </div>
+        ${teamCards}
         </main>
     </div>
-    <script src="./index.js"></script>
+        <script src="./index.js"></script>
 </body>
 </html>`
+};

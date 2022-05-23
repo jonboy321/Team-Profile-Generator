@@ -1,6 +1,10 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const { Manager, Intern, Engineer } = require('./lib');
+
+const Manager = require('./lib/Manager');
+const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
+
 const path = require('path');
 
 const DIST_DIRECTORY = path.resolve(__dirname, "dist");
