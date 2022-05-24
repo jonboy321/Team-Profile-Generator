@@ -11,8 +11,7 @@
   ## Installation 
   First install using ```npm i``` . Run ```node index.js``` in the terminal to get started, then answer all questions from the prompt about each employee. When finished, select "Done Adding".
   ## Usage 
-  Walk-through video is unfortunately too large so it is inside of a zipped file.
-  [TeamProfileGen WalkThrough.zip](https://github.com/jonboy321/Team-Profile-Generator/files/8759088/TeamProfileGen.WalkThrough.zip)
+  [Walk-through video](https://youtu.be/8K3_cEIaaDM)
 
   ## Contributing 
   Anyone is welcome to contribute to this project!
