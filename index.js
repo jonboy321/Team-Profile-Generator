@@ -12,8 +12,7 @@ const distPath = path.join(DIST_DIRECTORY, "index.html");
 
 const render = require('./src/page-template');
 
-const idArray = [];
-const employees = [];
+const employeesArray = [];
 
 const createManager = () => {
     inquirer.prompt([
@@ -41,12 +40,12 @@ const createManager = () => {
     .then((answers) => {
         console.log(answers);
         // create a Manager using the Manager class
-
+        const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
         // add that manager into your array
-        
-        mainMenu()
+        employeesArray.push(manager);
+        mainMenu();
     })
-}
+};
 
 const createEngineer = () => {
     inquirer.prompt([
@@ -73,10 +72,13 @@ const createEngineer = () => {
     ])
     .then((answers) => {
         console.log(answers);
-
-        mainMenu()
-    })
-}
+        // create a Engineer using the Engineer class
+        const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
+        // add that engineer into your array
+        employeesArray.push(engineer);
+        mainMenu();
+})
+};
 
 const createIntern  = () => {
     inquirer.prompt([
@@ -103,10 +105,13 @@ const createIntern  = () => {
     ])
     .then((answers) => {
         console.log(answers);
-
-        mainMenu()
-    })
-}
+        // create a Intern using the Intern class
+        const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
+        // add that intern into your array
+        employeesArray.push(intern);
+        mainMenu();
+})
+};
 
 const mainMenu = () => {
     inquirer.prompt({
@@ -129,7 +134,7 @@ const mainMenu = () => {
              ((answer) => {
               render = generateHTML(answer);
             
-              fs.writeFile('index.html', htmlPageContent, (err) =>
+              fs.writeFile('index.html', render(employeesArray), (err) =>
                 err ? console.log(err) : console.log('Successfully created index.html!')
               );
             });

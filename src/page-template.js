@@ -1,38 +1,38 @@
-const managerCard = function(Manager) {
+const managerCard = function(manager) {
     return
 `<div class="card" style="width: 18rem;">
     <div class="card-body">
-        <h5 class="card-title">Manager</h5>
-            <p class="card-text">Name: ${Manager.name}</p>
-            <p class="card-text">ID: ${Manager.id}</p>
-            <p class="card-text">Email: <a href="https:${Manager.email}//"></a>${Manager.email}</p>
-            <p class="card-text">Office Number: ${Manager.officeNumber}</p>
+        <h5 class="card-title">manager</h5>
+            <p class="card-text">Name: ${manager.name}</p>
+            <p class="card-text">ID: ${manager.id}</p>
+            <p class="card-text">Email: <a href="https:${manager.email}//"></a>${manager.email}</p>
+            <p class="card-text">Office Number: ${manager.officeNumber}</p>
     </div>
 </div>`
 };
 
-const engineerCard = function(Engineer) {
+const engineerCard = function(engineer) {
     return
 `<div class="card" style="width: 18rem;">
     <div class="card-body">
-        <h5 class="card-title">Engineer</h5>
-            <p class="card-text">Name: ${Engineer.name}</p>
-            <p class="card-text">ID: ${Engineer.id}</p>
-            <p class="card-text">Email: <a href="https://${Engineer.email}"></a>${Engineer.email}</p>
-            <p class="card-text">GitHub: <a href="https://github.com/${Engineer.github}"></a>${Engineer.github}</p>
+        <h5 class="card-title">engineer</h5>
+            <p class="card-text">Name: ${engineer.name}</p>
+            <p class="card-text">ID: ${engineer.id}</p>
+            <p class="card-text">Email: <a href="https://${engineer.email}"></a>${engineer.email}</p>
+            <p class="card-text">GitHub: <a href="https://github.com/${engineer.github}"></a>${engineer.github}</p>
     </div>`
 };
 
-const internCard = function(Intern) {
+const internCard = function(intern) {
     return
 `</div>
 <div class="card" style="width: 18rem;">
     <div class="card-body">
-        <h5 class="card-title">Intern</h5>
-            <p class="card-text">Name: ${Intern.name}</p>
-            <p class="card-text">ID: ${Intern.id}</p>
-            <p class="card-text">Email: <a href="https://${Intern.email}"></a>${Intern.email}</p>
-            <p class="card-text">School: ${Intern.school}</p>
+        <h5 class="card-title">intern</h5>
+            <p class="card-text">Name: ${intern.name}</p>
+            <p class="card-text">ID: ${intern.id}</p>
+            <p class="card-text">Email: <a href="https://${intern.email}"></a>${intern.email}</p>
+            <p class="card-text">School: ${intern.school}</p>
     </div>
 </div>`
 };
