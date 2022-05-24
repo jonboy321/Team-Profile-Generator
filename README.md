@@ -11,7 +11,7 @@
   ## Installation 
   Run ```node index.js``` in the terminal to get started, then answer all questions from the prompt about each employee. When finished, select "Done Adding".
   ## Usage 
-  
+  ```npm i``` ```node index.js```
   ## Contributing 
   Anyone is welcome to contribute to this project!
   ## Tests
